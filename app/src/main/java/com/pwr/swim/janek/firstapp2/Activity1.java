@@ -1,9 +1,12 @@
 package com.pwr.swim.janek.firstapp2;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class Activity1 extends ActionBarActivity {
@@ -12,6 +15,21 @@ public class Activity1 extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity1);
+
+        final Intent intencja1 = new Intent(this,activity2.class);
+
+        Button przycisk1 = (Button) findViewById(R.id.button);
+
+        przycisk1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(intencja1);
+            }
+        });
+
+
+
+
     }
 
 
@@ -36,4 +54,11 @@ public class Activity1 extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void uruchomDwa(View view) {
+        final Intent intencja2 = new Intent(this,activity2.class);
+        startActivity(intencja2);
+    }
+
+
 }

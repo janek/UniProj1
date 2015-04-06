@@ -4,6 +4,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 
 public class activity2 extends ActionBarActivity {
@@ -12,6 +14,21 @@ public class activity2 extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity2);
+
+
+//        TextView textViewDluzej = (TextView) findViewById(R.id.textViewDluzej);
+
+
+        View mojeOkno2 = (View) findViewById(R.id.mojeOkno2);
+
+        mojeOkno2.setOnLongClickListener(new View.OnLongClickListener() {
+            public boolean onLongClick(View v) {
+                finish();
+                return false;
+            }
+        });
+
+
     }
 
 
