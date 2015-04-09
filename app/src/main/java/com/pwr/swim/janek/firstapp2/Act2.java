@@ -1,23 +1,26 @@
 package com.pwr.swim.janek.firstapp2;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
-public class activity2 extends ActionBarActivity {
+public class Act2 extends ActionBarActivity {
+
+    private Switch switch1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity2);
 
-
-//        TextView textViewDluzej = (TextView) findViewById(R.id.textViewDluzej);
-
+        switch1 = (Switch) findViewById(R.id.switch1);
 
         View mojeOkno2 = (View) findViewById(R.id.mojeOkno2);
 
@@ -53,4 +56,25 @@ public class activity2 extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void goBack(View view) {
+        final Intent intencja = new Intent(this,Act1.class);
+        startActivity(intencja);
+    }
+
+    public void podsumuj(View view) {
+        String str;
+        if (switch1.isChecked()){
+            str = "Włączone!";
+        } else {
+            str = "Wyłączone!";
+        }
+
+
+        Toast mojToast = new Toast (getApplicationContext());
+        mojToast.makeText(Act2.this, str, mojToast.LENGTH_SHORT).show();
+
+    }
+
+
 }

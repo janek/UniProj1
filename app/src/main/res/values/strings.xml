@@ -1,10 +1,16 @@
 <resources>
     <string name="app_name">FirstApp2</string>
-
-    <string name="welcoming_string">Witam drogiego usermana.</string>
+    <string name="imie_nazw">Jan Szynal</string>
     <string name="txt2">B∀TON</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_activity2">activity2</string>
     <string name="dluzej">Przyciśnij mnie dłużej</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_act3">Act3</string>
+    <string name="title_activity_act4">Act4</string>
+    <string name="title_activity_act5">Act5</string>
+    <string name="go_back">Powrot</string>
+    <string name="lt">Layout Tablicowy</string>
+    <string name="keyIcon">key_icon</string>
+    <string name="title_activity_act6">Act6</string>
 </resources>

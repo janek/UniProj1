@@ -1,33 +1,32 @@
 package com.pwr.swim.janek.firstapp2;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
 
-public class Activity1 extends ActionBarActivity {
+public class Act6 extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity1);
+        setContentView(R.layout.activity_act6);
 
-        final Intent intencja1 = new Intent(this,activity2.class);
+        Intent iii = getIntent();
+        Bundle dane = new Bundle();
+        dane = iii.getExtras();
+        int suma = dane.getInt("suma");
+        System.out.println("elo"+suma);
 
-        Button przycisk1 = (Button) findViewById(R.id.button);
+        int wynik = suma*2;
 
-        przycisk1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(intencja1);
-            }
-        });
-
-
+        dane.putInt("wynik", wynik);
+        iii.putExtras(dane);
+        setResult(Activity.RESULT_OK, iii);
+        finish();
 
 
     }
@@ -36,7 +35,7 @@ public class Activity1 extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity1, menu);
+        getMenuInflater().inflate(R.menu.menu_act6, menu);
         return true;
     }
 
@@ -54,11 +53,4 @@ public class Activity1 extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    public void uruchomDwa(View view) {
-        final Intent intencja2 = new Intent(this,activity2.class);
-        startActivity(intencja2);
-    }
-
-
 }
